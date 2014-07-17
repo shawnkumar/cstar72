@@ -22,7 +22,7 @@ script = [
 script = "\n".join(script)
 ctool.Cluster().run(clusterName, 'all', script, stream=False, format_results=True)
 
-# get and install jepsen and dependencies
+# get and install modified/preconfigured jepsen and dependencies
 script = [
     "wget 'https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein'",
     "sudo mv lein /bin/lein",
