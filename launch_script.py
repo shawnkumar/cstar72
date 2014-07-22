@@ -4,7 +4,7 @@ from automaton.cluster import get_cluster_names, get_cluster
 #launch 6 node cluster via ctool (5 for nodes, 1 test coordinator)
 
 clusterName = 'cassa72'
-numNodes = 6
+numNodes = '6'
 platform = 'ubuntu'
 
 ctool.Cluster().launch(clusterName, numNodes, platform)
@@ -41,10 +41,10 @@ script = [
     "source /home/automaton/.rvm/scripts/rvm",
     "rvm install ruby 1.9.3",
     "rvm use 1.9.3",
-    "gem install salticid"
+    "gem install salticid",
     "touch ~/.salticidrc",
     "echo 'load ENV[=HOME=] + =/cassa72/salticid/*.rb=' >> ~/.salticidrc", #find non-hacky quote fix
-    "sudo sed -i 's/=/\"/g' ~/.salticidrc"
+    "sudo sed -i 's/=/\"/g' ~/.salticidrc",
     "salticid base.setup",
     "salticid cassandra.setup",
     "salticid cassandra.start"
